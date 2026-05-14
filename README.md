@@ -1,5 +1,5 @@
 # RadioAndCheckboxButton
-[RadioButton](Source/RadioButton/RadioButton.swift) and [CheckboxButton](Source/CheckboxButton/CheckboxButton.swift) are subclass of UIButton control. Use can use RadioButton and CheckboxButton same as UIButton. It gives you animation and different styles of a button. You can group buttons to take advantage of more feature. It automatically manages all selections/deselection of RadioButton and CheckboxButton.
+[RadioButton](Sources/MBRadioCheckboxButton/RadioButton.swift) and [CheckboxButton](Sources/MBRadioCheckboxButton/CheckboxButton.swift) are subclasses of `UIButton`. You can use `RadioButton` and `CheckboxButton` the same way as `UIButton`. The library provides animation and different button styles. You can also group buttons to automatically manage selection and deselection.
 
 ### CheckboxButton
 ###### Default Style
@@ -15,46 +15,30 @@
 
 ## Installation
 
-### CocoaPods
+### Swift Package Manager
 
-[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+In Xcode:
 
-```bash
-$ gem install cocoapods
-```
+1. Open your project.
+2. Go to **File > Add Package Dependencies**.
+3. Enter this repository URL.
+4. Select the required version, branch, or commit.
+5. Add the `MBRadioCheckboxButton` library product to your app target.
 
-To integrate ***RadioButton and CheckboxButton*** into your Xcode project using CocoaPods, specify it in your `Podfile`:
+If your fork has no release tags yet, add the dependency by branch (for example, `main`) and pin to a commit as needed.
 
-```ruby
-target '<Your Target Name>' do
-    pod 'MBRadioCheckboxButton'
-end
-```
-
-You can integrate indivisual button control if required.
-
-```ruby
-target '<Your Target Name>' do
-    pod 'MBRadioButton'
-end
-```
-```ruby
-target '<Your Target Name>' do
-    pod 'MBCheckboxButton'
-end
-```
-
-Then, run the following command:
-
-```bash
-$ pod install
-```
+Minimum supported iOS runtime version: **15.6**.
 
 ## How to Use
-It is simple and easy to use. Just assign [RadioButton](Source/RadioButton/RadioButton.swift) or [CheckboxButton](Source/CheckboxButton/CheckboxButton.swift) to your button in XIB. You can advantage of grouping button using [RadioButtonContainerView] (Source/RadioButton/RadioButtonContainerView.swift) or [CheckboxButtonContainerView](Source/CheckboxButton/CheckboxButtonContainerView.swift). Add all the button in a UIView and assign respective container classes to view For more details please refer to [RadioAndCheckboxButtonDemo](./) example. It has **CheckboxButtonDelegate** and **RadioButtonDelegate** to get a callback of selection and deselection of a button.
+It is simple and easy to use. Just assign [RadioButton](Sources/MBRadioCheckboxButton/RadioButton.swift) or [CheckboxButton](Sources/MBRadioCheckboxButton/CheckboxButton.swift) to your button in XIB. You can use grouping using [RadioButtonContainerView](Sources/MBRadioCheckboxButton/RadioButtonContainerView.swift) or [CheckboxButtonContainerView](Sources/MBRadioCheckboxButton/CheckboxButtonContainerView.swift). Add all buttons in a UIView and assign the respective container classes to that view. For more details refer to [RadioAndCheckboxButtonDemo](./) example. It has **CheckboxButtonDelegate** and **RadioButtonDelegate** to get callbacks for selection and deselection.
 
 ## Customization
-For more customization please refer to [RadioAndCheckboxButtonDemo](./) example.
+For more customization, refer to the [RadioAndCheckboxButtonDemo](./) example.
+
+## Release Notes
+- CocoaPods support removed.
+- Swift Package Manager is now the primary and only distribution method.
+- `Package.swift` uses `.iOS(.v15)` due to SwiftPM platform expression limits; intended minimum runtime remains **iOS 15.6**.
 
 ## Licence
 
